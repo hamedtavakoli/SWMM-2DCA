@@ -244,7 +244,7 @@ disp(['Start The Simulation .... Initial Time = ' num2str(T(1))])
                  
 %                 nc = abs((V(indr(i), indc(i)).*dt-Qp)./(Qn));
 % Thanks to Xing chen for this important coorection ---------------------
-                  nc = abs((V(indr(i), indc(i))/*dt+Qp)./(Qn));
+                  nc = abs((V(indr(i), indc(i))./dt+Qp)./(Qn));
 % -----------------------------------------------------------------------
                     if Qs(indr(i), indc(i),1)<0
                         Qs(indr(i), indc(i),1)=Qs(indr(i), indc(i),1).*nc;
