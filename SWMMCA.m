@@ -284,7 +284,7 @@ if ~(NumberofNodeInflow==0)
         A0=1;
        for i=1:NumberofNodeInflow
         QI(i)=sqrt(2*g*ht(row_Output(i),col_Output(i)))*C0*A0;
-        if QI(i)*dt<=V(row_Output(i),col_Output(i))
+        if QI(i)*dt > V(row_Output(i),col_Output(i))
             QI(i)=V(row_Output(i),col_Output(i))/dt;
         end
             V(row_Output(i),col_Output(i))=V(row_Output(i),col_Output(i))-QI(i)*dt;
